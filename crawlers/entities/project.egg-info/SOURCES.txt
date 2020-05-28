@@ -1,0 +1,17 @@
+setup.py
+crawlers/__init__.py
+crawlers/items.py
+crawlers/pipelines.py
+crawlers/settings.py
+crawlers/spiders/__init__.py
+crawlers/spiders/booking_hotels_spider.py
+crawlers/spiders/booking_single_hotel_spider.py
+crawlers/spiders/tripadvisor_attractions_spider.py
+crawlers/spiders/tripadvisor_hotel_review_info_spider.py
+crawlers/spiders/tripadvisor_hotels_spider.py
+crawlers/spiders/tripadvisor_restaurants_spider.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

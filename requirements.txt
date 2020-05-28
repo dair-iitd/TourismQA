@@ -1,0 +1,4 @@
+BeautifulSoup4
+scrapy-selenium
+scipy
+fuzzywuzzy

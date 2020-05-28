@@ -1,0 +1,1191 @@
+#tobacco shops
+nightlife
+vape shops
+shopping
+caterers
+grocery
+food
+#event planning & services
+#party & event planning
+specialty food
+restaurants
+pizza
+chicken wings
+italian
+#hair removal
+beauty & spas
+#blow dry/out services
+#hair stylists
+#hair extensions
+massage
+#permanent makeup
+#waxing
+hair salons
+hotels & travel
+hotels
+nail salons
+#baby gear & furniture
+tex-mex
+mexican
+fast food
+#local services
+#self storage
+bakeries
+hawaiian
+barbeque
+bookstores
+books
+#mags
+music & video
+#general dentistry
+#health & medical
+#dentists
+leather goods
+fashion
+watches
+#accessories
+#mobile phones
+#computers
+#electronics
+#it services & computer repair
+#animal shelters
+#pets
+shoe stores
+men's clothing
+venues & event spaces
+sports clubs
+#active life
+cafes
+#funeral services & cemeteries
+sandwiches
+breakfast & brunch
+salad
+#fitness & instruction
+#yoga
+tires
+#automotive
+#auto parts & supplies
+#wheel & rim repair
+#professional services
+#internet service providers
+#home services
+seafood
+#chiropractors
+desserts
+coffee & tea
+american (traditional)
+waffles
+southern
+soul food
+#auto repair
+#oil change stations
+#body shops
+#notaries
+#shipping centers
+#mailbox centers
+#lawyers
+persian/iranian
+ethnic food
+greek
+#plumbing
+thai
+american (new)
+pubs
+bars
+#preschools
+#elementary schools
+#child care & day care
+#education
+car buyers
+#used car dealers
+#car dealers
+diners
+burgers
+canadian (new)
+juice bars & smoothies
+vietnamese
+#used
+#vintage & consignment
+apartments
+#real estate services
+#real estate
+indian
+#specialty schools
+chocolatiers & shops
+#party supplies
+candy stores
+cooking schools
+japanese
+sushi bars
+#smog check stations
+trainers
+#interior design
+#shades & blinds
+convenience stores
+filipino
+performing arts
+arts & entertainment
+travel services
+vegetarian
+#sewing & alterations
+formal wear
+#veterinarians
+hiking
+parks
+#countertop installation
+#cabinetry
+#home & garden
+#kitchen & bath
+#photographers
+lounges
+dance clubs
+playgrounds
+rv dealers
+swimming pools
+hot tub & pool
+#pool cleaners
+#pool & hot tub service
+#transportation
+taxis
+gelato
+#fruits & veggies
+delicatessen
+recreation centers
+trampoline parks
+sports bars
+appliances & repair
+korean
+#physical therapy
+#doctors
+#sports medicine
+asian fusion
+chinese
+#fabric stores
+arts & crafts
+sporting goods
+bikes
+beer
+wine & spirits
+#nurseries & gardening
+dive bars
+#office equipment
+#furniture stores
+#massage therapy
+#guns & ammo
+#retirement homes
+#rehabilitation center
+local flavor
+festivals
+race tracks
+golf
+#movers
+#windshield installation & repair
+#auto glass services
+day spas
+#medical spas
+#infectious disease specialists
+gyms
+imported food
+steakhouses
+opera & ballet
+dance schools
+#eyewear & opticians
+jewelry
+#florists
+#flowers & gifts
+#acupuncture
+noodles
+delis
+music & dvds
+#vinyl records
+mattresses
+#home decor
+#tutoring centers
+#nanny services
+#test preparation
+#reflexology
+#cannabis clinics
+#cosmetic dentists
+#periodontists
+bed & breakfast
+car wash
+#auto detailing
+home health care
+#drugstores
+#vitamins & supplements
+#family practice
+#skin care
+hostels
+fishing
+outdoor gear
+#financial services
+#life insurance
+#insurance
+#health insurance offices
+ice cream & frozen yogurt
+#public services & government
+tapas bars
+barbers
+men's hair salons
+pet boarding/pet sitting
+pet services
+pet groomers
+#laser hair removal
+#dry cleaning & laundry
+#naturopathic/holistic
+#security systems
+#keys & locksmiths
+#thrift stores
+discount store
+cheese shops
+food delivery services
+farmers market
+music venues
+comedy clubs
+#luggage
+#electronics repair
+#auction houses
+#pet stores
+#auto customization
+airports
+buffets
+street vendors
+food trucks
+meat shops
+#television service providers
+#boot camps
+#watch repair
+#jewelry repair
+#employment agencies
+#talent agencies
+#pest control
+#spray tanning
+#tanning
+#flooring
+#weight loss centers
+#nutritionists
+#hobby shops
+#home window tinting
+mobile home parks
+#optometrists
+#ophthalmologists
+medical centers
+fondue
+#videographers
+#bridal
+#pediatricians
+#gas & service stations
+#comic books
+cinema
+shopping centers
+#water purification services
+#water heater installation/repair
+#water delivery
+#wedding chapels
+#carpeting
+#contractors
+#electricians
+#insulation installation
+#handyman
+#telecommunications
+#home theatre installation
+#tv mounting
+#painters
+gluten-free
+health markets
+smokehouse
+comfort food
+#real estate law
+#bankruptcy law
+#employment law
+#personal injury law
+#divorce & family law
+mediterranean
+turkish
+tours
+boating
+boat charters
+tapas/small plates
+bird shops
+pet breeders
+#cards & stationery
+#barre classes
+#pilates
+ticket sales
+baseball fields
+beer bar
+#cosmetics & beauty supply
+portuguese
+#makeup artists
+challenge courses
+escape games
+pakistani
+organic stores
+#community service/non-profit
+fishmonger
+fischbroetchen
+women's clothing
+gift shops
+department stores
+breweries
+videos & video game rental
+toy stores
+dog parks
+#truck rental
+donuts
+#newspapers & magazines
+malaysian
+laundry services
+#dry cleaning
+#wedding planning
+#oral surgeons
+#appliances
+#outlet stores
+bowling
+lingerie
+children's clothing
+#financial advising
+#mortgage brokers
+#shoe shine
+#cosmetology schools
+#party equipment rentals
+kids activities
+#home cleaning
+#carpet cleaning
+#furniture reupholstery
+#air duct cleaning
+#tattoo removal
+brasseries
+#home inspectors
+vegan
+french
+coffee roasteries
+reunion
+museums
+#masonry/concrete
+#montessori schools
+#neurologist
+#surgeons
+#hospitals
+#piercing
+#tattoo
+bagels
+food stands
+#counseling & mental health
+#obstetricians & gynecologists
+bike repair/maintenance
+bike rentals
+#legal services
+#banks & credit unions
+pharmacy
+#assisted living facilities
+#real estate agents
+#event photography
+#session photography
+#video/film production
+wine bars
+#orthodontists
+lebanese
+middle eastern
+hot dogs
+#landscape architects
+#gardeners
+#landscaping
+adult entertainment
+irish
+#psychiatrists
+summer camps
+kosher
+choirs
+#musical instruments & teachers
+halal
+#auto loan providers
+speakeasies
+cocktail bars
+#heating & air conditioning/hvac
+#nail technicians
+#medical transportation
+#tanning beds
+landmarks & historical buildings
+antiques
+#towing
+#eyelash service
+#business law
+#general litigation
+karaoke
+#car stereo installation
+#propane
+shoe repair
+creperies
+#printing services
+#screen printing
+#graphic design
+#gold buyers
+#property management
+#photography stores & services
+#radiologists
+#diagnostic services
+#diagnostic imaging
+#commercial truck dealers
+arcades
+mini golf
+go karts
+libraries
+hookah bars
+cupcakes
+modern european
+#pediatric dentists
+#mobile phone repair
+#advertising
+#laser eye surgery/lasik
+#departments of motor vehicles
+#martial arts
+#djs
+#hardware stores
+#pain management
+amusement parks
+#building supplies
+tiki bars
+personal shopping
+art galleries
+#tabletop games
+ethnic grocery
+#international grocery
+#fireplace services
+gay bars
+#religious organizations
+churches
+#vehicle shipping
+#airlines
+tea rooms
+sports wear
+#pumpkin patches
+#pick your own farms
+#farms
+#art supplies
+#art schools
+#customized merchandise
+#gymnastics
+#radio stations
+#mass media
+peruvian
+latin american
+#data recovery
+seafood markets
+#recycling center
+resorts
+casinos
+cheesesteaks
+#adult education
+#career counseling
+#life coach
+#packing services
+food court
+#paint stores
+#battery stores
+#fences & gates
+beaches
+poutineries
+szechuan
+dim sum
+fish & chips
+german
+#orthotics
+#podiatrists
+#internal medicine
+#roofing
+#medical supplies
+#couriers & delivery services
+#wholesale stores
+archery
+post offices
+parking
+#dog walkers
+#party bus rentals
+british
+#marketing
+#shutters
+#pet training
+#security services
+#laboratory testing
+horseback riding
+horse boarding
+#dermatologists
+#cosmetic surgeons
+live/raw food
+#boxing
+#garage door services
+beer gardens
+#accountants
+ramen
+#ear nose & throat
+#check cashing/pay-day loans
+#tax services
+pretzels
+jazz & blues
+#carpet installation
+gastropubs
+#commercial real estate
+caribbean
+haitian
+#engraving
+singaporean
+#gutter services
+#rv repair
+#interval training gyms
+jet skis
+lakes
+#special education
+#vocational & technical school
+#police departments
+butcher
+#halotherapy
+moroccan
+#tree services
+egyptian
+african
+pool halls
+shaved ice
+do-it-yourself food
+#damage restoration
+#office cleaning
+oriental
+arabian
+motorcycle dealers
+#motorcycle gear
+#motorcycle repair
+#powder coating
+pasta shops
+#urologists
+#fertility
+#boat repair
+#hunting & fishing supplies
+#boat dealers
+#home & rental insurance
+#auto insurance
+#photo booth rentals
+social clubs
+art classes
+afghan
+#midwives
+doulas
+#estate planning law
+#tiling
+#uniforms
+#knitting supplies
+golf lessons
+day camps
+limos
+#refinishing services
+#home staging
+#furniture assembly
+dance studios
+paint & sip
+bespoke clothing
+laser tag
+country dance halls
+car rental
+#utilities
+#septic services
+#furniture repair
+bubble tea
+#screen printing/t-shirt printing
+falafel
+professional sports teams
+wraps
+#psychics & astrologers
+airport shuttles
+town car service
+belgian
+ethiopian
+spanish
+shared office spaces
+hats
+souvenir shops
+#transmission repair
+#glass & mirrors
+#door sales/installation
+#windows installation
+cuban
+#endodontists
+hot pot
+#personal care services
+zoos
+#coffee & tea supplies
+#lighting fixtures & equipment
+airport lounges
+brazilian
+international
+#university housing
+public transportation
+scottish
+clowns
+#signmaking
+#audiologist
+#swimming lessons/schools
+#pet adoption
+#print media
+atv rentals/tours
+#aquarium services
+#car brokers
+#swabian
+#senior centers
+sri lankan
+#iv hydration
+#nurse practitioner
+#threading services
+argentine
+#pawn shops
+himalayan/nepalese
+leisure centers
+stadiums & arenas
+home energy auditors
+#solar installation
+#auto upholstery
+henna artists
+framing
+rafting/kayaking
+private tutors
+macarons
+patisserie/cake shop
+#urgent care
+#donairs
+#matchmakers
+#criminal defense law
+#immigration law
+soup
+taiwanese
+#editorial services
+amateur sports teams
+iberian
+internet cafes
+gun/rifle ranges
+#firearm training
+bangladeshi
+#reiki
+#traditional chinese medicine
+#lactation services
+chicken shop
+#irrigation
+bistros
+#dui law
+kebab
+buses
+burmese
+laundromat
+vacation rentals
+#educational services
+#cycling classes
+aquariums
+tennis
+adult
+campgrounds
+#plus size fashion
+wine tasting room
+wineries
+tacos
+#middle schools & high schools
+cajun/creole
+#mobile phone accessories
+#cardiologists
+#cardio classes
+flea markets
+buddhist temples
+feng shui
+spiritual shop
+#roadside assistance
+#investing
+#web design
+#flight instruction
+beverage store
+polish
+hair loss centers
+costumes
+climbing
+indonesian
+#motorsport vehicle dealers
+water stores
+botanical gardens
+food tours
+wine tours
+#holistic animal care
+#fire protection services
+#chimney sweeps
+hot air balloons
+aerial tours
+window washing
+#solar panel cleaning
+#pressure washers
+#wigs
+#teeth whitening
+#eyebrow services
+mountain biking
+puerto rican
+#aircraft dealers
+#aircraft repairs
+#speech therapists
+#occupational therapy
+cambodian
+scuba diving
+diving
+#golf equipment
+#golf cart rentals
+#orthopedists
+rv parks
+swimwear
+castles
+whiskey bars
+distilleries
+art museums
+#home organization
+#hypnosis/hypnotherapy
+#musical instrument services
+skate shops
+#yelp events
+#passport & visa services
+colombian
+video game stores
+perfume
+#patio coverings
+#embroidery & crochet
+#personal assistants
+#personal chefs
+russian
+ukrainian
+cafeteria
+#rugs
+disc golf
+salvadoran
+#architects
+#sugaring
+#junk removal & hauling
+bus tours
+cideries
+herbs & spices
+eastern european
+#recording & rehearsal studios
+#trophy shops
+#team building activities
+traffic ticketing law
+piano services
+musicians
+#party characters
+real estate photography
+#officiants
+#decks & railing
+local fish stores
+#drywall installation & repair
+reptile shops
+#demolition services
+#vehicle wraps
+#registration services
+#payroll services
+#emergency pet hospital
+free diving
+#emergency rooms
+races & competitions
+#first aid classes
+#cpr classes
+skate parks
+colleges & universities
+#wills
+#trusts
+#& probates
+rock climbing
+language schools
+skating rinks
+hungarian
+izakaya
+pedicabs
+carpenters
+#television stations
+used bookstore
+fireworks
+#meditation centers
+teppanyaki
+beer garden
+austrian
+maternity wear
+oxygen bars
+#colonics
+#commissioned artists
+caricatures
+#business consulting
+#public relations
+#appraisal services
+hindu temples
+rv rental
+christmas trees
+mulled wine
+#home automation
+guitar stores
+soccer
+#furniture rental
+#head shops
+flatbread
+#community centers
+#osteopathic physicians
+spin classes
+tai chi
+#outdoor furniture stores
+paint-your-own pottery
+#debt relief services
+#process servers
+#private investigation
+popcorn shops
+float spa
+#driving schools
+#traffic schools
+basque
+#snow removal
+walking tours
+pool & billiards
+fur clothing
+skydiving
+#grilling equipment
+poke
+champagne bars
+cooking classes
+pop-up shops
+face painting
+#gastroenterologist
+supper clubs
+#blood & plasma donation centers
+#health retreats
+#farm equipment repair
+#prosthodontists
+#metal fabricators
+#courthouses
+#contract law
+#valet services
+soba
+cultural center
+kombucha
+mongolian
+#proctologists
+paintball
+cannabis tours
+cantonese
+#walk-in clinics
+#allergists
+venezuelan
+tuscan
+hospice
+#machine & tool rental
+#mediators
+scandinavian
+#knife sharpening
+#livestock feed & supply
+country clubs
+#dumpster rental
+#endocrinologists
+trinidadian
+irish pub
+#magicians
+#tasting classes
+wine tasting classes
+guest houses
+#awnings
+motorcycle rental
+dominican
+basketball courts
+laotian
+#hydro-jetting
+mobile dent repair
+#rest stops
+embassy
+#taxidermy
+bar crawl
+ski resorts
+#hearing aid providers
+#rheumatologists
+drive-in theater
+#title loans
+bartenders
+#pet photography
+historical tours
+cannabis dispensaries
+acne treatment
+#translation services
+art restoration
+beach bars
+#csa
+batting cages
+baden
+#software development
+bartending schools
+#commercial truck repair
+#tax law
+#wholesalers
+restaurant supplies
+haunted houses
+#trailer dealers
+#trailer repair
+#brewing supplies
+ethic grocery
+#tenant and eviction law
+bingo halls
+#pulmonologist
+#condominiums
+shanghainese
+coffeeshops
+golf equipment shops
+#spine surgeons
+#vinyl siding
+#house sitters
+#scavenger hunts
+piano bars
+train stations
+synagogues
+cabaret
+bookkeepers
+serbo croatian
+#dental hygienists
+religious schools
+#cryotherapy
+#mortuary services
+#car inspectors
+hakka
+bike sharing
+firewood
+childproofing
+ziplining
+badminton
+currency exchange
+#high fidelity audio equipment
+airport terminals
+#sleep specialists
+#custom cakes
+travel agents
+#stucco services
+#massage schools
+#holiday decorating services
+pop-up restaurants
+acai bowls
+indoor playcentre
+curry sausage
+#bike repair
+bicycles
+south african
+#shredding services
+bike shop
+olive oil
+vacation rental agents
+skiing
+#oncologist
+water parks
+#emergency medicine
+surf shop
+#homeowner association
+#mobility equipment sales & services
+paddleboarding
+dinner theater
+ski & snowboard shops
+#psychologists
+saunas
+art space rentals
+bavarian
+ski schools
+#anesthesiologists
+music production services
+concept shops
+waterproofing
+#neurotologists
+#rolfing
+civic center
+udon
+party bike rentals
+parent cafes
+uzbek
+#fitness/exercise equipment
+#home network installation
+#airsoft
+piano stores
+marinas
+#backshop
+racing experience
+#prosthetics
+boat tours
+#auto security
+herbal shops
+new mexican cuisine
+#holiday decorations
+horse equipment shops
+czech
+#bail bondsmen
+#storefront clinics
+architectural tours
+car share services
+petting zoos
+#pet transportation
+clothing rental
+visitor centers
+christmas markets
+empanadas
+#placenta encapsulations
+#childbirth education
+#phlebologists
+bulgarian
+#roof inspectors
+#sports psychologists
+#cremation services
+#skilled nursing
+traditional clothing
+ranches
+japanese curry
+#farming equipment
+#fingerprinting
+#hearing aids
+pita
+#pathologists
+children's museums
+#neuropathologists
+#3d printing
+#hydrotherapy
+horse racing
+australian
+#car auctions
+#vascular medicine
+czech/slovakian
+tickets
+palatine
+#environmental abatement
+general festivals
+#gerontologists
+#fun fair
+#college counseling
+dive shops
+#lice services
+kickboxing
+#alsatian
+#medical cannabis referrals
+snorkeling
+#pet hospice
+#adoption services
+metro stations
+cable cars
+armenian
+rotisserie chicken
+#motorsport vehicle repairs
+#hydroponics
+market stalls
+artificial turf
+#installment loans
+ayurveda
+flowers
+#well drilling
+#pet insurance
+#preventive medicine
+#backflow services
+dance wear
+#animal physical therapy
+#fire departments
+#pole dancing classes
+#dialysis clinics
+minho
+mobile home dealers
+bubble soccer
+#junkyards
+swiss food
+calligraphy
+aerial fitness
+#shaved snow
+tempura
+tonkatsu
+#estate liquidation
+#parenting classes
+#car window tinting
+#fuel docks
+#addiction medicine
+#patent law
+planetarium
+observatories
+#machine shops
+sailing
+#game truck rental
+art tours
+#product design
+sledding
+mosques
+themed cafes
+#diy auto shop
+#waldorf schools
+#nursing schools
+#environmental testing
+#prenatal/perinatal care
+wok
+#circuit training gyms
+tubing
+slovakian
+#wildlife control
+#immunodermatologists
+squash
+pan asian
+beer tours
+trains
+#attraction farms
+#pensions
+drive-thru bars
+#medical law
+#workers compensation law
+#sex therapists
+beer hall
+packing supplies
+#homeless shelters
+#generator installation/repair
+erotic massage
+public art
+surfing
+#mortgage lenders
+island pub
+hotel bar
+brazilian jiu-jitsu
+muay thai
+club crawl
+#auto electric services
+food banks
+pub food
+community gardens
+#sandblasting
+milkshake bars
+#concierge medicine
+#indoor landscaping
+street art
+#tableware
+#teacher supplies
+#ip & internet law
+tui na
+#clock repair
+kiosk
+bookbinding
+hong kong style cafe
+#pet cremation services
+#religious items
+#unofficial yelp events
+rodeo
+private jet charter
+senegalese
+hainan
+osteopaths
+fencing clubs
+nicaraguan
+scooter tours
+#friterie
+#toxicologists
+taekwondo
+#veterans organizations
+karate
+carousels
+duty-free shops
+hang gliding
+public plazas
+dietitians
+#beach equipment rentals
+#lan centers
+#hepatologists
+#structural engineers
+flyboarding
+#duplication services
+#digitizing services
+agriturismi
+#linens
