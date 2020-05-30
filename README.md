@@ -18,7 +18,7 @@
 
 > Clone this repository to your local machine.
 ```bash
-git clone "https://github.com/danishContractor/TourQueData"
+git clone https://github.com/dair-iitd/TourismQA.git
 ```
 
 ### Environment Setup
@@ -237,7 +237,6 @@ The question_entity_map and entity_url_map have been provided in the repository.
 
 ## License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) 
 
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="[https://deepai.org/](https://deepai.org/)" target="_blank">DeepAI</a>.
+- **[Apache 2.0 license](https://opensource.org/licenses/Apache-2.0)**
