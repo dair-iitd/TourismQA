@@ -1,25 +1,9 @@
 import json
 import pickle
 from pathlib import Path
-from functools import wraps
 
 def getProjectRootPath() -> Path:
     return Path(__file__).parent.parent
-
-def catcher(step):
-	def decorator(function):
-		@wraps(function)
-		def wrapper(post, *args, **kwargs):
-			try:
-				post = function(post, *args, **kwargs)
-				if(len(post["entities"]) == 0):
-					raise Exception("No entities left")
-				else:
-					return post
-			except Exception as e:
-				raise Exception("%d: %s" % (step, str(e)))
-		return wrapper
-	return decorator
 
 def create(path) -> None:
     path = Path(path)

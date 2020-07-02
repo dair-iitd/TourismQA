@@ -1,3 +1,11 @@
+# Non-Licensed files
+java/
+data/generated
+data/input
+data/logs
+data/processed
+data/common/word_embeddings.pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
