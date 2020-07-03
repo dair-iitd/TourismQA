@@ -77,10 +77,6 @@ class Processor:
 		processed_dir_path = options.processed_dir_path
 		logs_dir_path = options.logs_dir_path
 
-		common.create(posts_dir_path)
-		common.create(processed_dir_path)
-		common.create(logs_dir_path)
-
 		file_posts = {}
 		for file_path in posts_dir_path.glob("**/*.json"):
 		    file_posts[str(file_path)] = json.load(open(file_path))
@@ -88,9 +84,6 @@ class Processor:
 		for file_path, posts in file_posts.items():
 			logs_file_path = logs_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".logs.json")
 			processed_file_path = processed_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".processed.json")
-
-			common.create(logs_file_path.parent)
-			common.create(processed_file_path.parent)
 
 			if(replace == False and processed_file_path.exists()):
 			    print("Skipping file %s! Processed file path %s already exists!\n" % (file_path, processed_file_path))
@@ -124,8 +117,8 @@ class Processor:
 			logs = [{"link": link, "status": status} for link, status in zip(links, statuses)]
 			processed_posts = list(filter(lambda post: post is not None, posts))
 
-			json.dump(logs, open(logs_file_path, "w"), indent = 4, ensure_ascii = False)
-			json.dump(processed_posts, open(processed_file_path, "w"), indent = 4, ensure_ascii = False)
+			common.dumpJSON(logs, logs_file_path)
+			common.dumpJSON(processed_posts, processed_file_path)
 
 			print()
 

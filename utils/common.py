@@ -10,11 +10,9 @@ def create(path) -> None:
     path.mkdir(parents = True, exist_ok = True)
 
 def dumpJSON(data, path, sort_keys = False) -> None:
-    path = Path(__file__).parent
-    path.mkdir(parents = True, exist_ok = True)
+    create(Path(path).parent)
     json.dump(data, open(path, "w"), indent = 4, ensure_ascii = False, sort_keys = sort_keys)
 
 def dumpPickle(data, path) -> None:
-    path = Path(__file__).parent
-    path.mkdir(parents = True, exist_ok = True)
+    create(Path(path).parent)
     pickle.dump(data, open(path, "wb"))
