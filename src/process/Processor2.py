@@ -25,11 +25,11 @@ class Processor:
 		entities = self.city_entities[str(city)]
 
 		for answer in post["answers"]:
-			if("Message from TripAdvisor staff" in answer["body"]):
+			if("Message from TripAdvisor staff" in answer):
 				continue
 
 			try:
-				chunk = nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(answer["body"])))
+				chunk = nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(answer)))
 				for node in chunk:
 					x = ""
 					if(type(node) == nltk.Tree):
@@ -41,13 +41,13 @@ class Processor:
 						continue
 
 					for entity_id, entity_item in entities.items():
-						if(fuzz.ratio(x, entity_item["name"]) > 95 and self.isNotNeighborhood(x.lower(), answer["body"].lower())):
+						if(fuzz.ratio(x, entity_item["name"]) > 95 and self.isNotNeighborhood(x.lower(), answer.lower())):
 							entity_counts[entity_id] += 1
 			except:
 				pass
 
 			for entity_id, entity_item in entities.items():
-				if((len(entity_item["name"]) > 6) and (" " + entity_item["name"].lower() in answer["body"].lower()) and self.isNotNeighborhood(x.lower(), answer["body"].lower())):
+				if((len(entity_item["name"]) > 6) and (" " + entity_item["name"].lower() in answer.lower()) and self.isNotNeighborhood(x.lower(), answer.lower())):
 					entity_counts[entity_id] += 1
 
 		post_entities = defaultdict(dict)

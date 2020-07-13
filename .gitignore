@@ -6,7 +6,6 @@ data/logs
 data/processed
 data/common/word_embeddings.pkl
 data/tourque/crawled
-data/tourque/logs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

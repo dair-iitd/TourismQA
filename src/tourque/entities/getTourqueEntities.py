@@ -1,6 +1,5 @@
 import sys
 import json
-import time
 import tqdm
 import logging
 import argparse
@@ -13,7 +12,7 @@ from typing import List, Dict, Tuple
 from .crawlers import Restaurants, Attractions, Hotels
 from utils import common
 
-logging.getLogger('scrapy').propagate = False
+logging.getLogger("scrapy").propagate = False
 
 class TourqueEntitiesCrawler:
     def __init__(self) -> None:
@@ -36,7 +35,7 @@ class TourqueEntitiesCrawler:
         bar.close()
         return results
 
-    def __call__(self, input_file_path: Path, output_dir_path: Path, log_file_path: Path) -> None:
+    def __call__(self, input_file_path: Path, output_dir_path: Path) -> None:
         data = []
         for item in json.load(open(input_file_path)):
             city = item["id"].split("_")[0]
@@ -56,15 +55,13 @@ if(__name__ == "__main__"):
 
 	defaults["input_file_path"] = project_root_path / "data" / "tourque" / "support"/ "entity_ids_to_entity_urls_map.json"
 	defaults["output_dir_path"] = project_root_path / "data" / "tourque" / "crawled"/ "entities"
-	defaults["log_file_path"] = project_root_path / "data" / "tourque" / "logs"/ "entities" / "entities.log.json"
 
 	parser = argparse.ArgumentParser(description = "Crawl Questions from Trip Advisor")
 
 	parser.add_argument("--input_file_path", type = str, default = defaults["input_file_path"])
 	parser.add_argument("--output_dir_path", type = str, default = defaults["output_dir_path"])
-	parser.add_argument("--log_file_path", type = str, default = defaults["log_file_path"])
 
 	options = parser.parse_args(sys.argv[1:])
 
 	tourque_entities_crawler = TourqueEntitiesCrawler()
-	tourque_entities_crawler(input_file_path = Path(options.input_file_path), output_dir_path = Path(options.output_dir_path), log_file_path = Path(options.log_file_path))
+	tourque_entities_crawler(input_file_path = Path(options.input_file_path), output_dir_path = Path(options.output_dir_path))
