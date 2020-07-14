@@ -15,7 +15,7 @@ from . import Processor1, Processor2, MSEQtagger, Processor3, Processor4
 from utils import common
 
 def getAveragePostLength(posts):
-	post_lengths = [len(post["body"]) for post in posts]
+	post_lengths = [len(post["question"]) for post in posts]
 	average_post_length = sum(post_lengths)/len(post_lengths)
 	return average_post_length
 

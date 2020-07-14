@@ -18,12 +18,12 @@ class Processor:
 	def isNotAppropriate(self, answers: List[Dict[str, str]]) -> bool:
 		return any("This post was determined to be inappropriate by the TripAdvisor community" in answer for answer in answers)
 
-	def isLongPost(self, body: str) -> bool:
-		return len(body) > 1.7 * self.average_post_length
+	def isLongPost(self, question: str) -> bool:
+		return len(question) > 1.7 * self.average_post_length
 
-	def isIrrelevantPost(self, title: str, body: str) -> bool:
+	def isIrrelevantPost(self, title: str, question: str) -> bool:
 		b1 = any(x in title.lower() for x in ["vs", " or ", "your thoughts", "route", "transfer", "how", "itinerary", "review"])
-		b2 = any(x in body.lower() for x in ["itinerary"])
+		b2 = any(x in question.lower() for x in ["itinerary"])
 		return b1 or b2
 
 	def __call__(self, post: Dict[str, dict]) -> None:
@@ -33,8 +33,8 @@ class Processor:
 		if(self.isNotAppropriate(post["answers"])):
 			raise Exception("Is Not Appropriate")
 
-		if(self.isLongPost(post["body"])):
+		if(self.isLongPost(post["question"])):
 			raise Exception("Long Post")
 
-		if(self.isIrrelevantPost(post["title"], post["body"])):
+		if(self.isIrrelevantPost(post["title"], post["question"])):
 			raise Exception("Irrelevant Post")

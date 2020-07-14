@@ -144,10 +144,10 @@ class MSEQtagger:
         if(len(posts) == 0):
             return []
 
-        questions = [post["body"] for post in posts if post is not None]
+        questions = [post["question"] for post in posts if post is not None]
         tags = self.tagger.tag(questions)
         questionsXtags = dict(zip(questions, tags))
 
         for post in posts:
             if(post is not None):
-                post["tags"] = questionsXtags[post["body"]]
+                post["tags"] = questionsXtags[post["question"]]

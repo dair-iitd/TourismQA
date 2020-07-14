@@ -2,7 +2,7 @@
 # Remove Attractions/Hotels in a Restaurant Post
 # Remove Type Shared Entity Names
 # Remove Category Places
-# Remove Entity Names in Body
+# Remove Entity Names in Question
 # Remove Repeated Entity Names
 
 import nltk
@@ -40,7 +40,7 @@ class Processor:
 
 	def removeEntityNamesInPost(self, post: Dict[str, dict]) -> None:
 		for entity_id, entity_item in list(post["entities"].items()):
-			if(entity_item["name"].lower() in post["body"].lower() or entity_item["name"].lower() in post["title"].lower()):
+			if(entity_item["name"].lower() in post["question"].lower() or entity_item["name"].lower() in post["title"].lower()):
 				del post["entities"][entity_id]
 
 	def removeRepeatedEntityNames(self, post: Dict[str, dict]) -> None:

@@ -18,7 +18,7 @@ class TourquePostsCrawler:
 
     def getPageFromURL(self, url: str) -> bytes:
         for i in range(self.retries):
-            time.sleep(0.01)
+            time.sleep(0.05)
             try:
                 response = urllib.request.urlopen(url)
                 page = BeautifulSoup(response.read(), "html.parser")
@@ -34,6 +34,16 @@ class TourquePostsCrawler:
         next_page_url = urljoin(url, next_page_elements[0].get("href"))
         next_page = self.getPageFromURL(next_page_url)
         return next_page
+
+    def getTitleFromPage(self, page: BeautifulSoup) -> str:
+        try:
+            for element in page(["script", "style"]):
+                element.decompose()
+            title = page.find("span", class_ = "topTitleText").get_text()
+            title = re.sub("\s+", " ", title).strip()
+            return title
+        except:
+            raise Exception("Error parsing HTML page for Title")
 
     def getQuestionFromPage(self, page: BeautifulSoup) -> str:
         try:
@@ -63,9 +73,11 @@ class TourquePostsCrawler:
             raise Exception("Error parsing HTML page for Answers")
 
     def getPostFromURL(self, url: str) -> Dict[str, Union[str, List]]:
-        post = {"question": "", "answers" : []}
+        post = {"url": url, "title": "", "question": "", "answers" : []}
 
         page = self.getPageFromURL(url = url)
+
+        post["title"] = self.getTitleFromPage(page = page)
         post["question"] = self.getQuestionFromPage(page = page)
 
         while(page is not None):
@@ -76,7 +88,7 @@ class TourquePostsCrawler:
         return post
 
     def __call__(self, input_file_path: Path, output_file_path: Path) -> None:
-        input_data = json.load(open(input_file_path))[:10]
+        input_data = json.load(open(input_file_path))[:1000]
 
         output_data = []
 
@@ -84,12 +96,7 @@ class TourquePostsCrawler:
         for input_item in input_data:
             try:
                 post = self.getPostFromURL(input_item["url"])
-
-                output_item = {}
-                output_item["question"] = post["question"]
-                output_item["answers"] = post["answers"]
-                output_item["url"] = input_item["url"]
-                output_data.append(output_item)
+                output_data.append(post)
             except Exception as e:
                 print("Exception: %s on url %s" % (str(e), input_item["url"]))
 
@@ -103,8 +110,8 @@ if(__name__ == "__main__"):
 
 	defaults = {}
 
-	defaults["input_file_path"] = project_root_path / "data" / "tourque" / "support"/ "test_question_urls_to_answer_entity_ids_map.json"
-	defaults["output_file_path"] = project_root_path / "data" / "tourque" / "crawled"/ "posts" / "test_posts.json"
+	defaults["input_file_path"] = project_root_path / "data" / "tourque" / "support"/ "train_question_urls_to_answer_entity_ids_map.json"
+	defaults["output_file_path"] = project_root_path / "data" / "tourque" / "crawled"/ "posts" / "train_posts.json"
 
 	parser = argparse.ArgumentParser(description = "Crawl Posts from Trip Advisor")
 
