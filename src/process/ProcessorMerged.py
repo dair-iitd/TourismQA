@@ -83,7 +83,6 @@ class Processor:
 		    file_posts[str(file_path)] = json.load(open(file_path, encoding = "utf-8"))
 
 		for file_path, posts in file_posts.items():
-			posts = posts[:50]
 			logs_file_path = logs_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".logs.json")
 			processed_file_path = processed_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".processed.json")
 
