@@ -1,11 +1,11 @@
 # Non-Licensed files
-java/
+data/entities
 data/generated
-data/input
-data/logs
-data/processed
+data/posts
 data/common/word_embeddings.pkl
 data/tourque/crawled
+data/tourque/processed
+java/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

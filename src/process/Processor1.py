@@ -16,7 +16,7 @@ class Processor:
 		return b1 or b2
 
 	def isNotAppropriate(self, answers: List[Dict[str, str]]) -> bool:
-		return any("This post was determined to be inappropriate by the TripAdvisor community" in answer for answer in answers)
+		return any("This post was determined to be inappropriate by the TripAdvisor community" in answer["body"] for answer in answers)
 
 	def isLongPost(self, question: str) -> bool:
 		return len(question) > 1.7 * self.average_post_length

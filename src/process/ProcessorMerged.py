@@ -82,6 +82,8 @@ class Processor:
 		    file_posts[str(file_path)] = json.load(open(file_path))
 
 		for file_path, posts in file_posts.items():
+			posts = posts[:500]
+
 			logs_file_path = logs_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".logs.json")
 			processed_file_path = processed_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".processed.json")
 
@@ -91,14 +93,14 @@ class Processor:
 
 			statuses = ["OK"] * len(posts)
 
-			processed_post_links = set()
+			processed_post_urls = set()
 			for index, post in enumerate(posts):
-				if(post["link"] in processed_post_links):
+				if(post["url"] in processed_post_urls):
 					posts[i] = None
-					statuses[i] = "Duplicate post link"
-				processed_post_links.add(post["link"])
+					statuses[i] = "Duplicate post url"
+				processed_post_urls.add(post["url"])
 
-			links = [post["link"] for post in posts]
+			urls = [post["url"] for post in posts]
 
 			print("Processing file %s" % (file_path))
 
@@ -114,7 +116,7 @@ class Processor:
 			print("Running Processing Step 3, 4 . . .")
 			posts, statuses = self.process(posts, self.processors2, statuses)
 
-			logs = [{"link": link, "status": status} for link, status in zip(links, statuses)]
+			logs = [{"url": url, "status": status} for url, status in zip(urls, statuses)]
 			processed_posts = list(filter(lambda post: post is not None, posts))
 
 			common.dumpJSON(logs, logs_file_path)
@@ -127,9 +129,9 @@ if(__name__ == "__main__"):
 
 	defaults = {}
 
-	defaults["posts_dir_path"] = project_root_path / "data" / "input"
-	defaults["processed_dir_path"] = project_root_path / "data" / "processed"
-	defaults["logs_dir_path"] = project_root_path / "data" / "logs"
+	defaults["posts_dir_path"] = project_root_path / "data" / "tourque" / "crawled" / "posts"
+	defaults["processed_dir_path"] = project_root_path / "data" / "tourque" / "processed"
+	defaults["logs_dir_path"] = project_root_path / "data" / "tourque" / "processed" / "logs"
 	defaults["cities_file_path"] = project_root_path / "data" / "common" / "cities.json"
 	defaults["city_entities_file_path"] = project_root_path / "data" / "generated" / "city_entities.json"
 	defaults["cluster_categories_file_path"] = project_root_path / "data" / "common" / "cluster_categories.json"

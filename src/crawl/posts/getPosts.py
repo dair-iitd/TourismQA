@@ -12,7 +12,7 @@ from typing import List, Dict, Union
 
 from utils import common
 
-class TourquePostsCrawler:
+class PostsCrawler:
     def __init__(self) -> None:
         self.retries = 5
 
@@ -94,21 +94,21 @@ class TourquePostsCrawler:
 
         return post
 
-    def __call__(self, input_file_path: Path, output_file_path: Path, cities_file_path: Path) -> None:
-        cities = json.load(open(cities_file_path))
+    def __call__(self, input_file_path: Path, output_file_path: Path) -> None:
         input_data = json.load(open(input_file_path))
 
         output_data = []
-        bar = tqdm.tqdm(total = len(input_data))
-        for input_item in input_data:
-            try:
-                post = self.getPostFromURL(input_item["url"])
-                post["city"] = cities[int(input_item["answer_entity_ids"][0].split("_")[0])]
-                output_data.append(post)
-            except Exception as e:
-                print("Exception: %s on url %s" % (str(e), input_item["url"]))
+        bar = tqdm.tqdm(total = sum([len(item["post_urls"]) for item in input_data.values()]))
+        for city, item in input_data.items():
+            for url in item["post_urls"]:
+                try:
+                    post = self.getPostFromURL(url)
+                    post["city"] = city
+                    output_data.append(post)
+                except Exception as e:
+                    print("Exception: %s on url %s" % (str(e), url))
 
-            bar.update()
+                bar.update()
 
         bar.close()
         common.dumpJSON(output_data, output_file_path)
@@ -118,17 +118,15 @@ if(__name__ == "__main__"):
 
 	defaults = {}
 
-	defaults["input_file_path"] = project_root_path / "data" / "tourque" / "support"/ "train_question_urls_to_answer_entity_ids_map.json"
-	defaults["output_file_path"] = project_root_path / "data" / "tourque" / "crawled"/ "posts" / "train_posts.json"
-    defaults["cities_file_path"] = project_root_path / "data" / "common" / "cities.json"
+	defaults["input_file_path"] = project_root_path / "data" / "generated" / "city_post_urls.json"
+	defaults["output_file_path"] = project_root_path / "data" / "posts" / "posts.raw.json"
 
 	parser = argparse.ArgumentParser(description = "Crawl Posts from Trip Advisor")
 
 	parser.add_argument("--input_file_path", type = str, default = defaults["input_file_path"])
 	parser.add_argument("--output_file_path", type = str, default = defaults["output_file_path"])
-	parser.add_argument("--cities_file_path", type = str, default = defaults["cities_file_path"])
 
 	options = parser.parse_args(sys.argv[1:])
 
-	tourque_posts_crawler = TourquePostsCrawler()
-	tourque_posts_crawler(input_file_path = Path(options.input_file_path), output_file_path = Path(options.output_file_path), cities_file_path = Path(options.cities_file_path))
+	posts_crawler = PostsCrawler()
+	posts_crawler(input_file_path = Path(options.input_file_path), output_file_path = Path(options.output_file_path))
