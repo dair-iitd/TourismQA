@@ -85,7 +85,6 @@ class Tagger:
                 solver.simplex(presolve = True)
                 solver.intopt()
 
-
                 for item in solver.cols:
                     x = item.name.split("_")
                     if(item.value == 1):

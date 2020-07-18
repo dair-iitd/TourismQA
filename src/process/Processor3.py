@@ -1,6 +1,5 @@
 # https://arxiv.org/pdf/1909.03527.pdf
 # Type based Filtering
-# Peer based Filtering
 
 import numpy as np
 from collections import defaultdict

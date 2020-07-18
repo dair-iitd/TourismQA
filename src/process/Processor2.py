@@ -38,14 +38,14 @@ class Processor:
 						continue
 
 					for entity_id, entity_item in entities.items():
-						if(fuzz.ratio(x, entity_item["name"]) > 95 and self.isNotNeighborhood(x.lower(), answer.lower())):
+						if(fuzz.ratio(x, entity_item["name"]) > 95 and self.isNotNeighborhood(x.lower(), answer["body"].lower())):
 							entity_counts[entity_id] += 1
+
+				for entity_id, entity_item in entities.items():
+					if((len(entity_item["name"]) > 6) and (" " + entity_item["name"].lower() in answer["body"].lower()) and self.isNotNeighborhood(x.lower(), answer["body"].lower())):
+						entity_counts[entity_id] += 1
 			except:
 				pass
-
-			for entity_id, entity_item in entities.items():
-				if((len(entity_item["name"]) > 6) and (" " + entity_item["name"].lower() in answer["body"].lower()) and self.isNotNeighborhood(x.lower(), answer["body"].lower())):
-					entity_counts[entity_id] += 1
 
 		post_entities = defaultdict(dict)
 		for entity_id, count in entity_counts.items():
