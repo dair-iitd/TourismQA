@@ -11,7 +11,7 @@ def create(path) -> None:
 
 def dumpJSON(data, path, sort_keys = False) -> None:
     create(Path(path).parent)
-    json.dump(data, open(path, "w"), indent = 4, ensure_ascii = False, sort_keys = sort_keys)
+    json.dump(data, open(path, "w", encoding = "utf-8"), indent = 4, ensure_ascii = False, sort_keys = sort_keys)
 
 def dumpPickle(data, path) -> None:
     create(Path(path).parent)

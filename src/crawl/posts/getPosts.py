@@ -43,7 +43,7 @@ class PostsCrawler:
             title = re.sub("\s+", " ", title).strip()
             return title
         except:
-            raise Exception("Error parsing HTML page for Title")
+            raise Exception("Error parsing HTML page for post title")
 
     def getQuestionFromPage(self, page: BeautifulSoup) -> str:
         try:
@@ -54,7 +54,17 @@ class PostsCrawler:
             question = re.sub("\s+", " ", question).strip()
             return question
         except:
-            raise Exception("Error parsing HTML page for Question")
+            raise Exception("Error parsing HTML page for post question")
+
+    def getDateFromPage(self, page: BeautifulSoup) -> str:
+        try:
+            for element in page(["script", "style"]):
+                element.decompose()
+            date = page.find("div", class_ = "postDate").get_text()
+            date = re.sub("\s+", " ", date).strip()
+            return date
+        except:
+            raise Exception("Error parsing HTML page for post date")
 
     def getAnswersFromPage(self, page: BeautifulSoup) -> List[str]:
         try:
@@ -86,6 +96,10 @@ class PostsCrawler:
 
         post["title"] = self.getTitleFromPage(page = page)
         post["question"] = self.getQuestionFromPage(page = page)
+        post["date"] = self.getDateFromPage(page = page)
+
+        if(all((" %s " % indicator) not in post["question"].lower() for indicator in ["recommend", "suggest", "place to", "where", "option", "best"])):
+            raise Exception("Irrelevant post")
 
         while(page is not None):
             answers = self.getAnswersFromPage(page = page)
@@ -95,7 +109,7 @@ class PostsCrawler:
         return post
 
     def __call__(self, input_file_path: Path, output_file_path: Path) -> None:
-        input_data = json.load(open(input_file_path))
+        input_data = json.load(open(input_file_path, encoding = "utf-8"))
 
         output_data = []
         bar = tqdm.tqdm(total = sum([len(item["post_urls"]) for item in input_data.values()]))
@@ -106,7 +120,8 @@ class PostsCrawler:
                     post["city"] = city
                     output_data.append(post)
                 except Exception as e:
-                    print("Exception: %s on url %s" % (str(e), url))
+                    pass
+                    # print("Exception: %s on url %s" % (str(e), url))
 
                 bar.update()
 
@@ -119,7 +134,7 @@ if(__name__ == "__main__"):
 	defaults = {}
 
 	defaults["input_file_path"] = project_root_path / "data" / "generated" / "city_post_urls.json"
-	defaults["output_file_path"] = project_root_path / "data" / "posts" / "posts.raw.json"
+	defaults["output_file_path"] = project_root_path / "data" / "posts" / "raw" / "posts.raw.json"
 
 	parser = argparse.ArgumentParser(description = "Crawl Posts from Trip Advisor")
 

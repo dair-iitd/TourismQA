@@ -70,14 +70,14 @@ class PostURLsCrawler:
                 post_urls += post_urls_
                 if(len(post_urls) == self.num_posts):
                     break
-                page = self.getNextPage(url = url, page = page)
+                page = self.getNextPage(url = city_url, page = page)
         except:
             pass
         return post_urls
 
     def __call__(self, city_urls_file_path: Path, city_post_urls_file_path: Path) -> None:
         city_post_urls = OrderedDict()
-        city_urls = json.load(open(city_urls_file_path))
+        city_urls = json.load(open(city_urls_file_path, encoding = "utf-8"))
 
         bar = tqdm.tqdm(total = len(city_urls))
         for city, city_url in city_urls.items():
@@ -102,7 +102,7 @@ if(__name__ == "__main__"):
     defaults["city_post_urls_file_path"] = project_root_path / "data" / "generated" / "city_post_urls.json"
     defaults["sleep"] = 0.05
     defaults["retries"] = 5
-    defaults["num_posts"] = 15
+    defaults["num_posts"] = 25
 
     parser = argparse.ArgumentParser(description = "Crawl city posts url from Trip Advisor")
 
