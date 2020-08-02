@@ -7,6 +7,7 @@
 
 import nltk
 import itertools
+import statistics
 from fuzzywuzzy import fuzz
 from typing import Dict, List
 
@@ -55,6 +56,16 @@ class Processor:
 			if(entity_item["name"].lower() in self.type_shared_entity_names):
 				del post["entities"][entity_id]
 
+	def removeMinorityEntities(self, post: Dict[str, dict]) -> None:
+		entity_types = list(map(lambda x: x.split("_")[1], list(post["entities"].keys())))
+		try:
+			majority_type = statistics.mode(entity_types)
+			for entity_id, entity_type in zip(list(post["entities"].keys()), entity_types):
+				if(entity_type != majority_type):
+					del post["entities"][entity_id]
+		except:
+			post["entities"] = {}
+
 	def __call__(self, post: Dict[str, dict]) -> None:
 		self.removeSelectedEntitiesInRestaurantPost(post)
 		if(len(post["entities"]) == 0):
@@ -75,3 +86,7 @@ class Processor:
 		self.removeTypeSharedEntityNames(post)
 		if(len(post["entities"]) == 0):
 			raise Exception("Removed Type Shared Entity Names. No entities left.")
+
+		self.removeMinorityEntities(post)
+		if(len(post["entities"]) == 0):
+			raise Exception("Removed minority entities. No entities left.")
