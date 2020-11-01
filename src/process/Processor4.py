@@ -4,6 +4,7 @@
 # Remove Category Places
 # Remove Entity Names in Question
 # Remove Repeated Entity Names
+# Remove Minority entities
 
 import nltk
 import itertools

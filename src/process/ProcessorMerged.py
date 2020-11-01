@@ -83,8 +83,8 @@ class Processor:
 		    file_posts[str(file_path)] = json.load(open(file_path, encoding = "utf-8"))
 
 		for file_path, posts in file_posts.items():
-			logs_file_path = logs_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".logs.json")
-			processed_file_path = processed_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".processed.json")
+			logs_file_path = logs_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".%slogs.json" % ("with_mseq_tagger." if with_mseq_tagger else  ""))
+			processed_file_path = processed_dir_path / Path(file_path).relative_to(posts_dir_path).with_suffix(".%sprocessed.json" % ("with_mseq_tagger." if with_mseq_tagger else  ""))
 
 			if(replace == False and processed_file_path.exists()):
 			    print("Skipping file %s! Processed file path %s already exists!\n" % (file_path, processed_file_path))

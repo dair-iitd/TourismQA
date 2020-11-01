@@ -1,6 +1,7 @@
 import os
 import json
 import glpk
+import time
 import shutil
 import tempfile
 import subprocess
@@ -17,7 +18,9 @@ class FeatureBuilder:
         tfd, tpath = tempfile.mkstemp()
 
         data = [{"question": question} for question in questions]
-        json.dump(data, open(ipath, "w"))
+        with open(ipath, "w") as file:
+            json.dump(data, file)
+            file.close()
 
         command = 'java -jar FeatureTools.jar feature "%s" "%s" "%s" .' % (ipath, opath, tpath)
         process = subprocess.Popen(command, stdout = subprocess.DEVNULL, stderr = subprocess.DEVNULL, cwd = str(self.java_dir_path), shell = True)
@@ -43,6 +46,7 @@ class Tagger:
             _, feature_file_path = tempfile.mkstemp(dir = features_dir_path, prefix = "%d." % index, suffix = ".feat")
             with open(feature_file_path, "w") as file:
                 file.write(item)
+                file.close()
 
         return Path(features_dir_path)
 
@@ -68,6 +72,7 @@ class Tagger:
                 feature_file_index = int(Path(feature_file_path).name.split(".", 1)[0])
                 ilp_file_path = str(self.java_dir_path / ("ILP_FOLDER/ilp_file_%s.txt" % (ilp_file_index)))
                 ilp_file_paths[feature_file_index] = Path(ilp_file_path)
+            file.close()
             os.remove(self.java_dir_path / "files_map.txt")
 
         return ilp_file_paths
@@ -143,9 +148,15 @@ class MSEQtagger:
         if(len(posts) == 0):
             return []
 
+        step = 200
+
+        questionsXtags = {}
         questions = [post["question"] for post in posts if post is not None]
-        tags = self.tagger.tag(questions)
-        questionsXtags = dict(zip(questions, tags))
+        for i in range(0, len(questions), step):
+            stepquestions = questions[i:i + step]
+            steptags = self.tagger.tag(stepquestions)
+            questionsXtags.update(dict(zip(stepquestions, steptags)))
+            time.sleep(5)
 
         for post in posts:
             if(post is not None):
