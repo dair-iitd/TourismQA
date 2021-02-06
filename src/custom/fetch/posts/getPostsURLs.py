@@ -97,7 +97,7 @@ if(__name__ == "__main__"):
 
     defaults = {}
 
-    defaults["city_urls_file_path"] = project_root_path / "data" / "common" / "city_urls.json"
+    defaults["city_urls_file_path"] = project_root_path / "data" / "common" / "city_urls.posts.json"
     defaults["post_urls_file_path"] = project_root_path / "data" / "custom" / "posts" / "urls" / "posts.urls.json"
     defaults["sleep"] = 0.05
     defaults["retries"] = 5
