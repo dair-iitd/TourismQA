@@ -27,9 +27,9 @@ def convert(post: Dict[str, dict]) -> List[Dict[str, dict]]:
 
     return outposts
 
-def convertProcessedPostsToDataFormat(processed_dir_path: Path, dataformat_dir_path: Path, start_date: int, end_date: int, replace: bool, ignore: bool) -> None:
+def convert(processed_dir_path: Path, postprocessed_dir_path: Path, start_date: int, end_date: int, replace: bool, ignore: bool) -> None:
     processed_dir_path = options.processed_dir_path
-    dataformat_dir_path = options.dataformat_dir_path
+    postprocessed_dir_path = options.postprocessed_dir_path
 
     start_date = datetime.strptime(start_date, "%d%m%Y")
     end_date = datetime.strptime(end_date, "%d%m%Y")
@@ -46,27 +46,27 @@ def convertProcessedPostsToDataFormat(processed_dir_path: Path, dataformat_dir_p
         file_posts[str(file_path)] = json.load(open(file_path, encoding = "utf-8"))
 
     for file_path, processed_posts in file_posts.items():
-        dataformat_file_path = dataformat_dir_path / Path(file_path).relative_to(processed_dir_path).with_suffix(".dataformat.json")
+        postprocessed_file_path = postprocessed_dir_path / Path(file_path).relative_to(processed_dir_path).with_suffix(".postprocessed.json")
 
-        if(replace == False and dataformat_file_path.exists()):
-            print("Skipping file %s! DataFormat file path %s already exists!\n" % (file_path, dataformat_file_path))
+        if(replace == False and postprocessed_file_path.exists()):
+            print("Skipping file %s! DataFormat file path %s already exists!\n" % (file_path, postprocessed_file_path))
             continue
 
         print("Processing file %s" % (file_path))
 
-        dataformat_posts = [convert(post) for post in processed_posts if check(post["date"])]
-        print("Accepted %d of %d posts" % (len(dataformat_posts), len(processed_posts)))
+        postprocessed_posts = [convert(post) for post in processed_posts if check(post["date"])]
+        print("Accepted %d of %d posts" % (len(postprocessed_posts), len(processed_posts)))
 
-        dataformat_posts = list(itertools.chain.from_iterable(dataformat_posts))
-        common.dumpJSON(dataformat_posts, dataformat_file_path)
+        postprocessed_posts = list(itertools.chain.from_iterable(postprocessed_posts))
+        common.dumpJSON(postprocessed_posts, postprocessed_file_path)
 
 if(__name__ == "__main__"):
     project_root_path = common.getProjectRootPath()
 
     defaults = {}
 
-    defaults["processed_dir_path"] = project_root_path / "data" / "posts" / "processed"
-    defaults["dataformat_dir_path"] = project_root_path / "data" / "posts" / "dataformat"
+    defaults["processed_dir_path"] = project_root_path / "data" / "custom" / "posts" / "processed"
+    defaults["postprocessed_dir_path"] = project_root_path / "data" / "custom" / "posts" / "postprocessed"
     defaults["start_date"] = "01010001"
     defaults["end_date"] = "31129999"
     defaults["replace"] = False
@@ -75,7 +75,7 @@ if(__name__ == "__main__"):
     parser = argparse.ArgumentParser(description = "Convert processed posts to data format")
 
     parser.add_argument("--processed_dir_path", type = str, default = defaults["processed_dir_path"])
-    parser.add_argument("--dataformat_dir_path", type = str, default = defaults["dataformat_dir_path"])
+    parser.add_argument("--postprocessed_dir_path", type = str, default = defaults["postprocessed_dir_path"])
     parser.add_argument("--start_date", type = str, default = defaults["start_date"])
     parser.add_argument("--end_date", type = str, default = defaults["end_date"])
     parser.add_argument("--replace", action = "store_true", default = defaults["replace"])
@@ -83,4 +83,4 @@ if(__name__ == "__main__"):
 
     options = parser.parse_args(sys.argv[1:])
 
-    convertProcessedPostsToDataFormat(processed_dir_path = Path(options.processed_dir_path), dataformat_dir_path = Path(options.dataformat_dir_path), start_date = options.start_date, end_date = options.end_date, replace = options.replace, ignore = options.ignore)
+    convert(processed_dir_path = Path(options.processed_dir_path), postprocessed_dir_path = Path(options.postprocessed_dir_path), start_date = options.start_date, end_date = options.end_date, replace = options.replace, ignore = options.ignore)

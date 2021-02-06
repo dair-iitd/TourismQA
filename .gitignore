@@ -1,10 +1,11 @@
 # Non-Licensed files
-data/entities
-data/generated
-data/posts
+data/custom/*
+data/generated/*
+data/tourque/entities/data/*
+data/tourque/posts/data/*
 data/common/word_embeddings.pkl
-data/tourque/crawled
-data/tourque/processed
+src/custom/fetch/cities/*
+src/custom/fetch/entities/*
 java/
 
 # Byte-compiled / optimized / DLL files

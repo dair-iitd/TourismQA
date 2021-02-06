@@ -6,7 +6,7 @@ from inline_requests import inline_requests
 
 from . import Processor
 
-class Service:
+class Parser:
     def __init__(self):
         pass
 
@@ -27,6 +27,7 @@ class Service:
         item = {}
 
         data = json.loads(response.css('script::text').re_first(r'window.__WEB_CONTEXT__=\{pageManifest:\s*(\{.*?)\}\s*;\s*'))
+        print(json.dumps(data, indent = 4), file = open("sorry", "w"))
         subdata = data["redux"]["api"]["responses"]["/data/1.0/location/" + data["redux"]["route"]["detail"]]["data"]
 
         item["name"] = subdata["name"]
@@ -36,7 +37,7 @@ class Service:
         item["latitude"] = subdata["latitude"]
         item["longitude"] = subdata["longitude"]
         item["rating"] = subdata["rating"]
-        
+
         item["url"] = response.url
 
         return item
@@ -44,7 +45,7 @@ class Service:
 class Crawler(scrapy.Spider):
     def __init__(self, items):
         self.items = items
-        self.service = Service()
+        self.parser = Parser()
         self.processor = Processor.Processor()
 
     def start_requests(self):
@@ -53,7 +54,7 @@ class Crawler(scrapy.Spider):
 
     @inline_requests
     def parse(self, response):
-        item = self.service.getEntityItem(response)
+        item = self.parser.getEntityItem(response)
         item["id"] = response.meta["id"]
 
         reviews = []
@@ -62,7 +63,7 @@ class Crawler(scrapy.Spider):
             for href in hrefs:
                 url = response.urljoin(href)
                 res = yield scrapy.Request(url)
-                review = self.service.getReviewItem(res)
+                review = self.parser.getReviewItem(res)
                 reviews.append(review)
 
             next_page_href = response.xpath('//div[contains(@class, "ui_pagination")]/a[contains(@class, "next")]/@href').get()

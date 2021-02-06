@@ -1,7 +1,6 @@
 import re
 import sys
 import bs4
-import json
 import math
 import time
 import tqdm
@@ -12,17 +11,17 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from collections import OrderedDict
-from typing import List, Dict, Union
+
 from utils import common
 
 class PostURLsCrawler:
-    def __init__(self, sleep, retries, num_posts) -> None:
+    def __init__(self, sleep, retries, num_posts):
         self.sleep = sleep
         self.retries = retries
         self.num_posts = num_posts
         self.count = 0
 
-    def getPageFromURL(self, url: str) -> BeautifulSoup:
+    def getPageFromURL(self, url):
         for i in range(self.retries):
             time.sleep(self.sleep)
             try:
@@ -33,7 +32,7 @@ class PostURLsCrawler:
                 pass
         raise Exception("Max Retries Exhausted for %s" % url)
 
-    def getNextPage(self, url: str, page: BeautifulSoup) -> BeautifulSoup:
+    def getNextPage(self, url, page):
         next_page_elements = page.select('a[class*="pageNext"]')
         if(next_page_elements == []):
             return None
@@ -41,7 +40,7 @@ class PostURLsCrawler:
         next_page = self.getPageFromURL(next_page_url)
         return next_page
 
-    def getPostURLsFromPage(self, url: str, page: BeautifulSoup) -> List[str]:
+    def getPostURLsFromPage(self, url, page):
         post_urls = []
         posts = page.find("table", attrs = {"class": "topics"}).findAll("tr")[1:]
         for post in posts:
@@ -60,7 +59,7 @@ class PostURLsCrawler:
                 pass
         return post_urls
 
-    def getPostURLsFromCityURL(self, city_url: str) -> List[str]:
+    def getPostURLsFromCityURL(self, city_url):
         post_urls = []
         try:
             page = self.getPageFromURL(url = city_url)
@@ -75,9 +74,9 @@ class PostURLsCrawler:
             pass
         return post_urls
 
-    def __call__(self, city_urls_file_path: Path, city_post_urls_file_path: Path) -> None:
+    def __call__(self, city_urls_file_path, posts_urls_file_path):
         city_post_urls = OrderedDict()
-        city_urls = json.load(open(city_urls_file_path, encoding = "utf-8"))
+        city_urls = common.loadJSON(city_urls_file_path)
 
         bar = tqdm.tqdm(total = len(city_urls))
         for city, city_url in city_urls.items():
@@ -91,23 +90,23 @@ class PostURLsCrawler:
             bar.update()
 
         bar.close()
-        common.dumpJSON(city_post_urls, city_post_urls_file_path)
+        common.dumpJSON(city_post_urls, posts_urls_file_path)
 
 if(__name__ == "__main__"):
     project_root_path = common.getProjectRootPath()
 
     defaults = {}
 
-    defaults["city_urls_file_path"] = project_root_path / "data" / "common" / "city_urls.posts.json"
-    defaults["city_post_urls_file_path"] = project_root_path / "data" / "generated" / "city_post_urls.json"
+    defaults["city_urls_file_path"] = project_root_path / "data" / "common" / "city_urls.json"
+    defaults["post_urls_file_path"] = project_root_path / "data" / "custom" / "posts" / "urls" / "posts.urls.json"
     defaults["sleep"] = 0.05
     defaults["retries"] = 5
-    defaults["num_posts"] = 25
+    defaults["num_posts"] = 10
 
     parser = argparse.ArgumentParser(description = "Crawl city posts url from Trip Advisor")
 
     parser.add_argument("--city_urls_file_path", type = str, default = defaults["city_urls_file_path"])
-    parser.add_argument("--city_post_urls_file_path", type = str, default = defaults["city_post_urls_file_path"])
+    parser.add_argument("--posts_urls_file_path", type = str, default = defaults["posts_urls_file_path"])
     parser.add_argument("--sleep", type = float, default = defaults["sleep"])
     parser.add_argument("--retries", type = int, default = defaults["retries"])
     parser.add_argument("--num_posts", type = int, default = defaults["num_posts"])
@@ -115,4 +114,4 @@ if(__name__ == "__main__"):
     options = parser.parse_args(sys.argv[1:])
 
     post_urls_crawler = PostURLsCrawler(sleep = options.sleep, retries = options.retries, num_posts = options.num_posts)
-    post_urls_crawler(city_urls_file_path = Path(options.city_urls_file_path), city_post_urls_file_path = Path(options.city_post_urls_file_path))
+    post_urls_crawler(city_urls_file_path = Path(options.city_urls_file_path), posts_urls_file_path = Path(options.posts_urls_file_path))

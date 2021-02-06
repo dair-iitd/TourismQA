@@ -7,7 +7,7 @@ from inline_requests import inline_requests
 
 from . import Processor
 
-class Service:
+class Parser:
     def __init__(self):
         pass
 
@@ -45,7 +45,7 @@ class Service:
 class Crawler(scrapy.Spider):
     def __init__(self, items):
         self.items = items
-        self.service = Service()
+        self.parser = Parser()
         self.processor = Processor.Processor()
 
     def start_requests(self):
@@ -55,11 +55,11 @@ class Crawler(scrapy.Spider):
     def getReviewItems(self, response):
         reviews = nested_lookup("reviewListPage", json.loads(response.css('script::text').re_first(r'window.__WEB_CONTEXT__=\{pageManifest:\s*(\{.*?)\}\s*;\s*')))[0]["reviews"]
         for review in reviews:
-            yield self.service.getReviewItem(review)
+            yield self.parser.getReviewItem(review)
 
     @inline_requests
     def parse(self, response):
-        item = self.service.getEntityItem(response)
+        item = self.parser.getEntityItem(response)
         item["id"] = response.meta["id"]
 
         reviews = []

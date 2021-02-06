@@ -9,6 +9,9 @@ def create(path) -> None:
     path = Path(path)
     path.mkdir(parents = True, exist_ok = True)
 
+def loadJSON(path) -> None:
+    return json.load(open(path, "r", encoding = "utf-8"))
+
 def dumpJSON(data, path, sort_keys = False) -> None:
     create(Path(path).parent)
     json.dump(data, open(path, "w", encoding = "utf-8"), indent = 4, ensure_ascii = False, sort_keys = sort_keys)

@@ -8,7 +8,7 @@ from inline_requests import inline_requests
 
 from . import Processor
 
-class Service:
+class Parser:
     def __init__(self):
         pass
 
@@ -62,7 +62,7 @@ class Service:
 class Crawler(scrapy.Spider):
     def __init__(self, items):
         self.items = items
-        self.service = Service()
+        self.parser = Parser()
         self.processor = Processor.Processor()
 
     def start_requests(self):
@@ -70,17 +70,17 @@ class Crawler(scrapy.Spider):
             yield scrapy.Request(item["url"], meta = {"id": item["id"]})
 
     def getReviewItems(self, response):
-        url = self.service.cleanURL(response.url)
+        url = self.parser.cleanURL(response.url)
         review_selectors = response.xpath('//ul[@class="review_list"]/li')
         for review_selector in review_selectors:
-            yield self.service.getReviewItem(scrapy.Selector(text = review_selector.extract()), url)
+            yield self.parser.getReviewItem(scrapy.Selector(text = review_selector.extract()), url)
 
     @inline_requests
     def parse(self, response):
-        item = self.service.getEntityItem(response)
+        item = self.parser.getEntityItem(response)
         item["id"] = response.meta["id"]
 
-        base_review_page_url = self.service.getBaseReviewPageUrl(response.url)
+        base_review_page_url = self.parser.getBaseReviewPageUrl(response.url)
         response = yield scrapy.Request(base_review_page_url, headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36", "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"})
 
         reviews = []

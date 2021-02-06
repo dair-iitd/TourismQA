@@ -1,4 +1,10 @@
+json
+tqdm
+nltk
+numpy
+scipy
+scrapy
+urllib
+fuzzywuzzy
 BeautifulSoup4
 scrapy-selenium
-scipy
-fuzzywuzzy
