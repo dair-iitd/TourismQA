@@ -5,6 +5,9 @@ numpy
 scipy
 scrapy
 urllib
+dateparser
 fuzzywuzzy
 BeautifulSoup4
 scrapy-selenium
+nested_lookup
+scrapy.inline_requests

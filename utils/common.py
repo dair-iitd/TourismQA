@@ -19,3 +19,16 @@ def dumpJSON(data, path, sort_keys = False) -> None:
 def dumpPickle(data, path) -> None:
     create(Path(path).parent)
     pickle.dump(data, open(path, "wb"))
+
+def update(d, u):
+    for k, v in u.items():
+        if(isinstance(v, dict)):
+            d[k] = update(d[k], v)
+        else:
+            if(isinstance(v, list)):
+                for e in v:
+                    if(e not in d[k]):
+                        d[k].append(e)
+            else:
+                d[k] = v
+    return d

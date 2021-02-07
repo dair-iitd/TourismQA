@@ -9,7 +9,7 @@ from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
 
 from utils import common
-from .crawlers import Restaurants, Attractions, Hotels
+from utils.crawlers import Restaurants, Attractions, Hotels
 
 logging.getLogger("scrapy").propagate = False
 
